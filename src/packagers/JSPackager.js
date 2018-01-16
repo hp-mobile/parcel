@@ -76,6 +76,7 @@ class JSPackager extends Packager {
       await this.writeModule(
         0,
         hmr
+          .replace('{{HMR_PROTOCOL}}', this.options.https ? 'wss' : 'ws')
           .replace('{{HMR_PORT}}', this.options.hmrPort)
           .replace('{{HMR_HOSTNAME}}', this.options.hmrHostname)
       );

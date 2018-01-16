@@ -16,7 +16,7 @@ module.bundle.Module = Module;
 
 if (!module.bundle.parent && typeof WebSocket !== 'undefined') {
   var hostname = '{{HMR_HOSTNAME}}' || location.hostname;
-  var ws = new WebSocket('ws://' + hostname + ':{{HMR_PORT}}/');
+  var ws = new WebSocket('{{HMR_PROTOCOL}}://' + hostname + ':{{HMR_PORT}}/');
   ws.onmessage = function(event) {
     var data = JSON.parse(event.data);
 
