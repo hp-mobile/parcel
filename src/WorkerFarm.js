@@ -9,7 +9,8 @@ let shared = null;
 class WorkerFarm extends Farm {
   constructor(options) {
     let opts = {
-      maxConcurrentWorkers: getNumWorkers()
+      maxConcurrentWorkers: getNumWorkers(),
+      maxCallTime: 1000
     };
 
     let workerPath =
